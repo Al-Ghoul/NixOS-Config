@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
 	wayland.windowManager.hyprland.enable = true;
 	wayland.windowManager.hyprland.settings = {
@@ -55,5 +55,11 @@
 				popups = true;
 			};
 		};
+		plugin = {
+			hyprtrails.color = "rgba(ffaa00ff)";
+		};
 	};
+	wayland.windowManager.hyprland.plugins = [
+		pkgs.hyprlandPlugins.hyprtrails
+	];
 }
