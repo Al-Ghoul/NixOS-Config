@@ -1,18 +1,18 @@
-{ pkgs, ... }:
-{
-	imports = [
-		./modules/home-manager/hyprland.nix	
-		./modules/home-manager/waybar.nix	
-		./modules/home-manager/wofi.nix	
-		./modules/home-manager/pkgs.nix	
-		./modules/home-manager/shell.nix	
-		./modules/home-manager/gtk.nix	
-		./modules/home-manager/git.nix	
-	];
+{pkgs, ...}: {
+  imports = [
+    ./modules/home-manager/hyprland.nix
+    ./modules/home-manager/waybar.nix
+    ./modules/home-manager/wofi.nix
+    ./modules/home-manager/pkgs.nix
+    ./modules/home-manager/shell.nix
+    ./modules/home-manager/gtk.nix
+    ./modules/home-manager/git.nix
+    ./modules/home-manager/nixvim.nix
+  ];
 
-	home.username = "abdo";
-	home.homeDirectory = "/home/abdo";
-	home.stateVersion = "23.11";
+  home.username = "abdo";
+  home.homeDirectory = "/home/abdo";
+  home.stateVersion = "23.11";
 
   home.pointerCursor = {
     gtk.enable = true;
