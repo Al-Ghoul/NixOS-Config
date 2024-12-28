@@ -34,10 +34,25 @@
 #   useXkbConfig = true; # use xkb.options in tty.
   #};
 
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
   hardware.graphics.enable = true;
-
+programs.hyprland.enable = true;
+  services = {
+	  displayManager = {
+      sddm = {
+        enable = true;
+	wayland.enable = true;
+        theme = "AlGhoul-SDDM-Theme";
+        autoNumlock = true;
+        settings = {
+          Autologin = {
+            Session = "hyprland";
+            User = "alghoul";
+          };
+        };
+      };
+	defaultSession = "hyprland";
+	  };
+    };
 
   
 
@@ -71,6 +86,8 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
      wget
      git
+     libsForQt5.qt5.qtgraphicaleffects
+     (callPackage ./modules/nix-os/alghoul-sddm-theme.nix { })
    ];
 
   # Some programs need SUID wrappers, can be configured further or are
