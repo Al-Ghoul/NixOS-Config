@@ -2,6 +2,7 @@
 {
 	imports = [
 		./modules/home-manager/hyprland.nix	
+		./modules/home-manager/pkgs.nix	
 	];
 
 	home.username = "abdo";
