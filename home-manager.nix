@@ -6,6 +6,7 @@
 		./modules/home-manager/wofi.nix	
 		./modules/home-manager/pkgs.nix	
 		./modules/home-manager/shell.nix	
+		./modules/home-manager/gtk.nix	
 	];
 
 	home.username = "abdo";
