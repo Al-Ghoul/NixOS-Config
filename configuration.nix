@@ -52,6 +52,18 @@ programs.hyprland.enable = true;
       };
 	defaultSession = "hyprland";
 	  };
+    # Screen sharing
+    pipewire = {
+      enable = true;
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
+      jack.enable = true;
+      audio.enable = true;
+      pulse.enable = true;
+      wireplumber.enable = true;
+    };
     };
 
   
@@ -63,7 +75,6 @@ programs.hyprland.enable = true;
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  hardware.pulseaudio.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
