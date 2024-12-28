@@ -57,6 +57,7 @@
    users.users.abdo = {
      isNormalUser = true;
      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+	     shell = pkgs.fish;
      packages = with pkgs; [
   #     firefox
   #     tree
@@ -79,6 +80,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+   programs.fish.enable = true;
 
   # List services that you want to enable:
 
