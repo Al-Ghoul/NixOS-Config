@@ -36,6 +36,7 @@
 
   hardware.graphics.enable = true;
 programs.hyprland.enable = true;
+programs.thunar.enable = true;
   services = {
 	  displayManager = {
       sddm = {

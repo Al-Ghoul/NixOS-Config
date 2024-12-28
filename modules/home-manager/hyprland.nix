@@ -13,6 +13,7 @@
 			"$mod, V, togglefloating"
 			"$mod, P, pseudo"
 			"$mod, J, togglesplit"
+			"$mod, E, exec, thunar"
 		]
 		++ (
 				builtins.concatLists (builtins.genList (i:
