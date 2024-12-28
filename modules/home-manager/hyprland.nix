@@ -5,6 +5,14 @@
 		"$mod" = "SUPER";
 		bind = [
 			"$mod, Q, exec, kitty"	
+			"$mod, B, exec, brave"	
+			"$mod, S, togglespecialworkspace, magic"	
+			"$mod SHIFT, S, movetoworkspace, special:magic"
+			"$mod, F4, killactive"
+			"$mod, [, exit"
+			"$mod, V, togglefloating"
+			"$mod, P, pseudo"
+			"$mod, J, togglesplit"
 		]
 		++ (
 				builtins.concatLists (builtins.genList (i:
