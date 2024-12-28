@@ -31,6 +31,9 @@
 			"$mod, mouse:273, resizewindow"
 		];
 
+		exec-once = [ 
+			"mpvpaper -o '--loop-file inf' '*' /mnt/HardDriveTwo/home/alghoul/Downloads/Wallpapers/Video/mylivewallpapers-com-Omen-4K.mp4"
+		];
 		general = {
 			gaps_in = 5;
 			gaps_out= 5;

@@ -5,5 +5,7 @@
 
 		# Text colorizes for fish
 		grc
+
+		mpvpaper
 	];
 }
