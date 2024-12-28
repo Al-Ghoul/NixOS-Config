@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
 	imports = [
 		./modules/home-manager/hyprland.nix	
@@ -13,5 +13,12 @@
 	home.homeDirectory = "/home/abdo";
 	home.stateVersion = "23.11";
 
-	programs.home-manager.enable = true;
+  home.pointerCursor = {
+    gtk.enable = true;
+    name = "Vimix-cursors";
+    package = pkgs.vimix-cursors;
+    size = 16;
+  };
+
+  programs.home-manager.enable = true;
 }
