@@ -7,6 +7,7 @@
 		./modules/home-manager/pkgs.nix	
 		./modules/home-manager/shell.nix	
 		./modules/home-manager/gtk.nix	
+		./modules/home-manager/git.nix	
 	];
 
 	home.username = "abdo";
