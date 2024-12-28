@@ -13,6 +13,7 @@
 			"$mod, V, togglefloating"
 			"$mod, P, pseudo"
 			"$mod, J, togglesplit"
+			"$mod, SPACE, exec, wofi"
 			"$mod, E, exec, thunar"
 		]
 		++ (
