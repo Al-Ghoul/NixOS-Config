@@ -459,16 +459,6 @@
       enable = true;
       settings = {
         gui.theme = {lightTheme = false;};
-        customCommands = [
-          {
-            key = "C";
-            command = "git cz";
-            description = "commit with commitizen";
-            context = "files";
-            loadingText = "opening commitizen commit tool";
-            subprocess = true;
-          }
-        ];
       };
     };
   };
