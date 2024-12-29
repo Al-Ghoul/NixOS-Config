@@ -14,5 +14,9 @@
     tree
     lazydocker
 
+    # Misc
+    pomodoro-gtk
+    obsidian
+    lxappearance
   ];
 }
