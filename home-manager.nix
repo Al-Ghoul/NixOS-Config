@@ -10,6 +10,7 @@
     ./modules/home-manager/nixvim.nix
     ./modules/home-manager/direnv.nix
     ./modules/home-manager/starship.nix
+    ./modules/home-manager/services.nix
   ];
 
   home.username = "abdo";
