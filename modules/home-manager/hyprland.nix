@@ -15,7 +15,13 @@
         "$mod, SPACE, exec, wofi"
         "$mod, E, exec, thunar"
         "$mod, X, exec, grim -g \"$(slurp)\" - | swappy -f - "
+        
         "ALT, V, exec, cliphist list | wofi -dmenu | cliphist decode | wl-copy"
+        
+        "$mod, left, movefocus, l"
+        "$mod, right, movefocus, r"
+        "$mod, up, movefocus, u"
+        "$mod, down, movefocus, d"
       ]
       ++ (
         builtins.concatLists (builtins.genList (
