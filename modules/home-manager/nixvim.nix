@@ -212,7 +212,7 @@
         encoding = "UTF-8";
       };
 
-      colorschemes.melange.enable = true;
+      colorschemes.oxocarbon.enable = true;
 
       plugins = {
         startup = {
