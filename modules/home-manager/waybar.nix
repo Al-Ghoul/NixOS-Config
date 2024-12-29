@@ -1,5 +1,4 @@
-{ pkgs, ... }: 
-{
+{pkgs, ...}: {
   programs.waybar = {
     enable = true;
     settings = {
@@ -10,9 +9,9 @@
         spacing = 10;
         margin-left = 5;
         margin-right = 5;
-        output = [ "eDP-1" "HDMI-A-1" ];
-        modules-center = [ "hyprland/window" ];
-        modules-left = [ "hyprland/workspaces" ];
+        output = ["eDP-1" "HDMI-A-1"];
+        modules-center = ["hyprland/window"];
+        modules-left = ["hyprland/workspaces"];
         "modules-right" = [
           "tray"
           "idle_inhibitor"
@@ -45,7 +44,7 @@
 
         "hyprland/workspaces" = {
           "show-special" = true;
-          "persistent-workspaces" = { "*" = [ 1 2 3 4 5 6 7 ]; };
+          "persistent-workspaces" = {"*" = [1 2 3 4 5 6 7];};
           "format" = "{icon}";
           "format-icons" = {
             "active" = "";
@@ -56,12 +55,12 @@
           };
         };
 
-        "hyprland/window" = { "rewrite" = { "" = "❄️ NixOS ❄️"; }; };
+        "hyprland/window" = {"rewrite" = {"" = "❄️ NixOS ❄️";};};
 
         network = {
           interface = "enp8s0";
           interval = 2;
-          "format-icons" = [ "󰤯 " "󰤟 " "󰤢 " "󰤥 " "󰤨 " ];
+          "format-icons" = ["󰤯 " "󰤟 " "󰤢 " "󰤥 " "󰤨 "];
           format = "Error";
           "tooltip-format" = "Error";
           "format-wifi" = "{icon}";
@@ -107,7 +106,7 @@
           format = " {usage}%";
         };
 
-        temperature = { interval = 10; };
+        temperature = {interval = 10;};
 
         clock = {
           interval = 1;
@@ -152,7 +151,7 @@
             phone = "";
             portable = "";
             car = "";
-            default = [ "" "" "" ];
+            default = ["" "" ""];
           };
           tooltip = true;
           tooltip-format = "{icon} at {volume}%";
@@ -181,94 +180,93 @@
       };
     };
     style = ''
-      * {
-        font-family: "JetBrainsMono Nerd Font";
-      }
+           * {
+             font-family: "JetBrainsMono Nerd Font";
+           }
 
-      window#waybar {
-        background: rgba(0, 0, 0, 0);
-        font-size: 0.8rem;
-        border-radius: 0.5rem;
-      }
+           window#waybar {
+             background: rgba(0, 0, 0, 0);
+             font-size: 0.8rem;
+             border-radius: 0.5rem;
+           }
 
-      tooltip {
-        font-size: 0.8rem;
-      }
+           tooltip {
+             font-size: 0.8rem;
+           }
 
-      .modules-left,
-      .modules-center {
-        background: radial-gradient(circle, rgba(180,9,9,1) 0%, rgba(19,25,32,1) 100%);
-        border-radius: 0.5rem;
-        padding: 2px;
-      }
-	
-      .modules-center {
-	color: white;
-      }
+           .modules-left,
+           .modules-center {
+             background: radial-gradient(circle, rgba(180,9,9,1) 0%, rgba(19,25,32,1) 100%);
+             border-radius: 0.5rem;
+             padding: 2px;
+           }
 
-      .modules-right {
-        background: radial-gradient(circle, rgba(180,9,9,1) 0%, rgba(19,25,32,1) 90%);
-        border-radius: 0.5rem;
-        padding: 2px 2px 2px 10px;
-	color: white;
-      }
+           .modules-center {
+      color: white;
+           }
 
-      #pulseaudio {
-        padding-right: 5px;
-      }
+           .modules-right {
+             background: radial-gradient(circle, rgba(180,9,9,1) 0%, rgba(19,25,32,1) 90%);
+             border-radius: 0.5rem;
+             padding: 2px 2px 2px 10px;
+      color: white;
+           }
 
-      #workspaces {
-        background-color: rgba(0,0,0,0.7);
-        border-radius: 0.5rem;
-        padding: 4px;
-      }
+           #pulseaudio {
+             padding-right: 5px;
+           }
 
-       #workspaces button {
-         font-size: 0.7rem;
-         padding: 0 0.3rem 0 0;
-       }
+           #workspaces {
+             background-color: rgba(0,0,0,0.7);
+             border-radius: 0.5rem;
+             padding: 4px;
+           }
 
-       #workspaces button.special {
-         font-size: 0.7rem;
-         padding: 0 0.3rem 0 0;
-       }
+            #workspaces button {
+              font-size: 0.7rem;
+              padding: 0 0.3rem 0 0;
+            }
 
-       #workspaces button.active {
-         color: #CA1A1A;
-       }
+            #workspaces button.special {
+              font-size: 0.7rem;
+              padding: 0 0.3rem 0 0;
+            }
 
-       #workspaces button.urgent {
-         color: red;
-       }     
+            #workspaces button.active {
+              color: #CA1A1A;
+            }
 
-       #window {
-         background-color: rgba(0,0,0,0.7);
-         border-radius: 0.5rem;
-         padding: 2px 5px;
-       }
+            #workspaces button.urgent {
+              color: red;
+            }
 
-       #clock {
-         font-weight: bolder;
-         border-radius: 0.5rem;
-         padding: 0 3px 0 0;
-       }
+            #window {
+              background-color: rgba(0,0,0,0.7);
+              border-radius: 0.5rem;
+              padding: 2px 5px;
+            }
 
-       #memory {
-         color: lightpink;
-       }
+            #clock {
+              font-weight: bolder;
+              border-radius: 0.5rem;
+              padding: 0 3px 0 0;
+            }
 
-       #disk {
-         color: lightskyblue;
-       }
+            #memory {
+              color: lightpink;
+            }
 
-       #cpu {
-         color: lightgoldenrodyellow;
-       }
+            #disk {
+              color: lightskyblue;
+            }
 
-       #temperature {
-         color: lightslategray;
-       }
+            #cpu {
+              color: lightgoldenrodyellow;
+            }
+
+            #temperature {
+              color: lightslategray;
+            }
     '';
   };
 }
-

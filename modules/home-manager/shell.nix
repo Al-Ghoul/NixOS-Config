@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs = {
     fish = {
       enable = true;
@@ -21,7 +21,7 @@
     kitty = {
       enable = true;
       font = {
-        package =  pkgs.nerd-fonts.jetbrains-mono;
+        package = pkgs.nerd-fonts.jetbrains-mono;
         name = "jetbrains mono nerd font";
       };
       settings = {
@@ -41,12 +41,12 @@
         "ctrl+shift+t" = "new_tab_with_cwd";
         "ctrl+shift+n" = "no_op";
       };
-      shellIntegration = { enableFishIntegration = true; };
+      shellIntegration = {enableFishIntegration = true;};
     };
 
-    fzf = { enable = true; };
+    fzf = {enable = true;};
 
-    zoxide = { enable = true; };
+    zoxide = {enable = true;};
 
     tmux = {
       enable = true;
@@ -56,7 +56,7 @@
           plugin = rose-pine;
           extraConfig = ''
             set -g @rose_pine_variant 'main' # Options are 'main', 'moon' or 'dawn'
-            set -g @rose_pine_bar_bg_disable 'on' 
+            set -g @rose_pine_bar_bg_disable 'on'
             set -g @rose_pine_bar_bg_disabled_color_option 'default'
           '';
         }
@@ -107,7 +107,6 @@
             set -g @pomodoro_interval_display "[%s/%s]"
           '';
         }
-
       ];
 
       extraConfig = ''
@@ -138,6 +137,5 @@
         bind-key -T copy-mode-vi 'C-\' select-pane -l
       '';
     };
-
   };
 }

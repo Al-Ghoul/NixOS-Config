@@ -1,11 +1,10 @@
-{pkgs, ...}:
-{
-	home.packages = with pkgs; [
-		brave		
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    brave
 
-		# Text colorizes for fish
-		grc
+    # Text colorizes for fish
+    grc
 
-		mpvpaper
-	];
+    mpvpaper
+  ];
 }

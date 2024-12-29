@@ -1,5 +1,7 @@
-{ pkgs, fetchFromGitHub }:
-
+{
+  pkgs,
+  fetchFromGitHub,
+}:
 pkgs.stdenvNoCC.mkDerivation {
   name = "AlGhoul-SDDM-Theme";
   dontBuild = true;
@@ -15,4 +17,3 @@ pkgs.stdenvNoCC.mkDerivation {
     sha256 = "sha256-s5MRDVmTTpzGuw2Z3nsmjaxwsg9fJb6FfCoyM/sNQL8=";
   };
 }
-

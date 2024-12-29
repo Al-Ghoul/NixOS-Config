@@ -1,14 +1,8 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
-{ config, lib, pkgs, ... }:
-
-{
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+{pkgs, ...}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -17,7 +11,7 @@
   networking.hostName = "AlGhoul"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "Africa/Cairo";
@@ -30,19 +24,19 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   nixpkgs = {
-	  config = {
-		  allowUnfree = true;
-	  };
+    config = {
+      allowUnfree = true;
+    };
   };
 
   hardware.graphics.enable = true;
-programs.hyprland.enable = true;
-programs.thunar.enable = true;
+  programs.hyprland.enable = true;
+  programs.thunar.enable = true;
   services = {
-	  displayManager = {
+    displayManager = {
       sddm = {
         enable = true;
-	wayland.enable = true;
+        wayland.enable = true;
         theme = "AlGhoul-SDDM-Theme";
         autoNumlock = true;
         settings = {
@@ -52,8 +46,8 @@ programs.thunar.enable = true;
           };
         };
       };
-	defaultSession = "hyprland";
-	  };
+      defaultSession = "hyprland";
+    };
     # Screen sharing
     pipewire = {
       enable = true;
@@ -66,9 +60,7 @@ programs.thunar.enable = true;
       pulse.enable = true;
       wireplumber.enable = true;
     };
-    };
-
-  
+  };
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -77,31 +69,30 @@ programs.thunar.enable = true;
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-   users.users.abdo = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-	     shell = pkgs.fish;
-     packages = with pkgs; [
-  #     firefox
-  #     tree
-     ];
-   };
-nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  users.users.abdo = {
+    isNormalUser = true;
+    extraGroups = ["wheel"]; # Enable ‘sudo’ for the user.
+    shell = pkgs.fish;
+    packages = with pkgs; [
+      #     firefox
+      #     tree
+    ];
+  };
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-   environment.systemPackages = with pkgs; [
-     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     wget
-     git
-     libsForQt5.qt5.qtgraphicaleffects
-     (callPackage ./modules/nix-os/alghoul-sddm-theme.nix { })
-   ];
+  environment.systemPackages = with pkgs; [
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    git
+    libsForQt5.qt5.qtgraphicaleffects
+    (callPackage ./modules/nix-os/alghoul-sddm-theme.nix {})
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -110,7 +101,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-   programs.fish.enable = true;
+  programs.fish.enable = true;
 
   # List services that you want to enable:
 
@@ -145,6 +136,4 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
-
