@@ -21,5 +21,8 @@
 
     # Media recording
     obs-studio
+
+    # Social
+    vesktop
   ];
 }
