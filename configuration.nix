@@ -24,6 +24,8 @@
     };
   };
 
+  virtualisation.docker.enable = true;
+
   hardware.graphics.enable = true;
   programs = {
     hyprland.enable = true;
@@ -62,7 +64,7 @@
 
   users.users.abdo = {
     isNormalUser = true;
-    extraGroups = ["wheel"];
+    extraGroups = ["wheel" "docker"];
     shell = pkgs.fish;
   };
   nix.settings.experimental-features = ["nix-command" "flakes"];
