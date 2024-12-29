@@ -24,5 +24,8 @@
 
     # Social
     vesktop
+
+    # Audio/Video player
+    mpv
   ];
 }
