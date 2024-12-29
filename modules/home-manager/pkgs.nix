@@ -8,5 +8,9 @@
     grc
 
     mpvpaper
+
+    # Dev related
+    tmux-sessionizer
+    tree
   ];
 }
