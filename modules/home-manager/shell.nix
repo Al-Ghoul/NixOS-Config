@@ -32,7 +32,7 @@
         active_border_color = "#16caf3";
         enabled_layouts = "vertical,horizontal";
       };
-      themeFile = "rose-pine";
+      themeFile = "Pnevma";
       keybindings = {
         "ctrl+right" = "resize_window narrower";
         "ctrl+left" = "resize_window wider";
