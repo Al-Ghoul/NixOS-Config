@@ -61,6 +61,24 @@
         popups = true;
       };
     };
+    windowrulev2 = [
+      "opacity 0.8 0.5,class:^(vesktop)$"
+      "animation popin,class:^(vesktop)$"
+
+      "animation popin,class:^(thunar)$"
+      "opacity 0.8 0.8,class:^(thunar)$"
+
+      "move cursor -3% -105%,class:^(wofi)$"
+      "noanim,class:^(wofi)$"
+      "opacity 0.8 0.6,class:^(wofi)$"
+
+      "opacity 0.7 0.7,class:^(obsidian)$"
+      "animation popin,class:^(obsidian)$"
+
+      "animation popin,class:^(brave)$"
+
+      "animation popin,class:^(kitty)$"
+    ];
     plugin = {
       hyprtrails.color = "rgba(ffaa00ff)";
     };
