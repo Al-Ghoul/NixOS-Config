@@ -18,5 +18,8 @@
     pomodoro-gtk
     obsidian
     lxappearance
+
+    # Media recording
+    obs-studio
   ];
 }
