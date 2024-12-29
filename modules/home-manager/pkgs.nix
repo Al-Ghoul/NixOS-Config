@@ -26,5 +26,8 @@
 
     # Audio/Video player
     mpv
+
+    # sends desktop notifications to a notification daemon
+    libnotify
   ];
 }
