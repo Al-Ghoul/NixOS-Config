@@ -57,7 +57,7 @@
       gaps_in = 5;
       gaps_out = 5;
       border_size = 2;
-      "col.active_border" = "rgba(13ACACee) rgba(16A0F3ee) 90deg";
+      "col.active_border" = "rgba(B3FFFDee) rgba(000000ee) 90deg";
       "col.inactive_border" = "rgba(595959aa)";
       layout = "dwindle";
     };
@@ -98,7 +98,7 @@
       "animation popin,class:^(kitty)$"
     ];
     plugin = {
-      hyprtrails.color = "rgba(ffaa00ff)";
+      hyprtrails.color = "rgba(B3FFFDEE)";
     };
   };
   wayland.windowManager.hyprland.plugins = [
