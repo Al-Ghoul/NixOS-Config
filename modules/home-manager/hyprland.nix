@@ -35,6 +35,11 @@
       "mpvpaper -o '--loop-file inf' '*' /mnt/HardDriveTwo/home/alghoul/Downloads/Wallpapers/Video/mylivewallpapers-com-Omen-4K.mp4"
       "waybar"
     ];
+    input = {
+      kb_layout = "us,ara";
+      kb_options = "grp:alt_shift_toggle";
+      kb_variant = ",qwerty";
+    };
     general = {
       gaps_in = 5;
       gaps_out = 5;
