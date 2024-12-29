@@ -40,5 +40,7 @@
     swappy # Annotations
 
     wl-clipboard # required by cliphist's service
+
+    hyprpicker
   ];
 }
