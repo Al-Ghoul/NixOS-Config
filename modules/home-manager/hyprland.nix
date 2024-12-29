@@ -23,6 +23,9 @@
         "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
+
+        "$mod, L, exec, swaylock"
+        "$mod,  M, exec, wlogout --protocol layer-shell"
       ]
       ++ (
         builtins.concatLists (builtins.genList (
