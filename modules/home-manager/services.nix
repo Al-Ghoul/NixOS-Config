@@ -1,7 +1,7 @@
 _: {
   services = {
     easyeffects.enable = true;
-    
+
     mako = {
       enable = true;
       font = "Fantasque Sans Mono 14";
@@ -53,6 +53,5 @@ _: {
     };
 
     cliphist.enable = true;
-    
   };
 }

@@ -180,93 +180,93 @@
       };
     };
     style = ''
-           * {
-             font-family: "JetBrainsMono Nerd Font";
-           }
+      * {
+        font-family: "JetBrainsMono Nerd Font";
+      }
 
-           window#waybar {
-             background: rgba(0, 0, 0, 0);
-             font-size: 0.8rem;
-             border-radius: 0.5rem;
-           }
+      window#waybar {
+        background: rgba(0, 0, 0, 0);
+        font-size: 0.8rem;
+        border-radius: 0.5rem;
+      }
 
-           tooltip {
-             font-size: 0.8rem;
-           }
+      tooltip {
+        font-size: 0.8rem;
+      }
 
-           .modules-left,
-           .modules-center {
-             background: radial-gradient(circle, rgba(99,116,152,1) 0%, rgba(19,25,32,1) 100%);
-             border-radius: 0.5rem;
-             padding: 2px;
-           }
+      .modules-left,
+      .modules-center {
+        background: radial-gradient(circle, rgba(99,116,152,1) 0%, rgba(19,25,32,1) 100%);
+        border-radius: 0.5rem;
+        padding: 2px;
+      }
 
-           .modules-center {
-            color: white;
-           }
+      .modules-center {
+       color: white;
+      }
 
-           .modules-right {
-             background: radial-gradient(circle, rgba(99,116,152,1) 0%, rgba(19,25,32,1) 90%);
-             border-radius: 0.5rem;
-             padding: 2px 2px 2px 10px;
-             color: white;
-           }
+      .modules-right {
+        background: radial-gradient(circle, rgba(99,116,152,1) 0%, rgba(19,25,32,1) 90%);
+        border-radius: 0.5rem;
+        padding: 2px 2px 2px 10px;
+        color: white;
+      }
 
-           #pulseaudio {
-             padding-right: 5px;
-           }
+      #pulseaudio {
+        padding-right: 5px;
+      }
 
-           #workspaces {
-             background-color: rgba(0,0,0,0.7);
-             border-radius: 0.5rem;
-             padding: 4px;
-           }
+      #workspaces {
+        background-color: rgba(0,0,0,0.7);
+        border-radius: 0.5rem;
+        padding: 4px;
+      }
 
-            #workspaces button {
-              font-size: 0.7rem;
-              padding: 0 0.3rem 0 0;
-            }
+       #workspaces button {
+         font-size: 0.7rem;
+         padding: 0 0.3rem 0 0;
+       }
 
-            #workspaces button.special {
-              font-size: 0.7rem;
-              padding: 0 0.3rem 0 0;
-            }
+       #workspaces button.special {
+         font-size: 0.7rem;
+         padding: 0 0.3rem 0 0;
+       }
 
-            #workspaces button.active {
-              color: #637498;
-            }
+       #workspaces button.active {
+         color: #637498;
+       }
 
-            #workspaces button.urgent {
-              color: red;
-            }
+       #workspaces button.urgent {
+         color: red;
+       }
 
-            #window {
-              background-color: rgba(0,0,0,0.7);
-              border-radius: 0.5rem;
-              padding: 2px 5px;
-            }
+       #window {
+         background-color: rgba(0,0,0,0.7);
+         border-radius: 0.5rem;
+         padding: 2px 5px;
+       }
 
-            #clock {
-              font-weight: bolder;
-              border-radius: 0.5rem;
-              padding: 0 3px 0 0;
-            }
+       #clock {
+         font-weight: bolder;
+         border-radius: 0.5rem;
+         padding: 0 3px 0 0;
+       }
 
-            #memory {
-              color: lightpink;
-            }
+       #memory {
+         color: lightpink;
+       }
 
-            #disk {
-              color: lightskyblue;
-            }
+       #disk {
+         color: lightskyblue;
+       }
 
-            #cpu {
-              color: lightgoldenrodyellow;
-            }
+       #cpu {
+         color: lightgoldenrodyellow;
+       }
 
-            #temperature {
-              color: lightgoldenrodyellow;
-            }
+       #temperature {
+         color: lightgoldenrodyellow;
+       }
     '';
   };
 }
