@@ -52,5 +52,7 @@ _: {
       '';
     };
 
+    cliphist.enable = true;
+    
   };
 }

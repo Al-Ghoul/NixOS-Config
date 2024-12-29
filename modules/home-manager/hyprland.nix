@@ -15,6 +15,7 @@
         "$mod, J, togglesplit"
         "$mod, SPACE, exec, wofi"
         "$mod, E, exec, thunar"
+        "ALT, V, exec, cliphist list | wofi -dmenu | cliphist decode | wl-copy"
       ]
       ++ (
         builtins.concatLists (builtins.genList (

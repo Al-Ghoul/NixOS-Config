@@ -29,5 +29,7 @@
 
     # sends desktop notifications to a notification daemon
     libnotify
+
+    wl-clipboard # required by cliphist's service
   ];
 }
