@@ -1,6 +1,6 @@
 # Usage
 ```sh
-# 1. Clone the NixOS-Conf repo
+# 1. Clone the NixOS-Config repo
 git clone https://github.com/Al-Ghoul/NixOS-Config.git
 
 # 2. Backup your current config 
