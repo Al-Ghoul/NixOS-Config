@@ -12,5 +12,7 @@
     # Dev related
     tmux-sessionizer
     tree
+    lazydocker
+
   ];
 }
