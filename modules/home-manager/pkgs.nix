@@ -33,6 +33,12 @@
     # Pulseaudio command line mixer
     pamixer
     pavucontrol
+
+    # Screenshotting
+    grim
+    slurp # Area selection
+    swappy # Annotations
+
     wl-clipboard # required by cliphist's service
   ];
 }

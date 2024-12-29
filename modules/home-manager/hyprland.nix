@@ -15,6 +15,7 @@
         "$mod, J, togglesplit"
         "$mod, SPACE, exec, wofi"
         "$mod, E, exec, thunar"
+        "$mod, X, exec, grim -g \"$(slurp)\" - | swappy -f - "
         "ALT, V, exec, cliphist list | wofi -dmenu | cliphist decode | wl-copy"
       ]
       ++ (
