@@ -30,6 +30,9 @@
     # sends desktop notifications to a notification daemon
     libnotify
 
+    # Pulseaudio command line mixer
+    pamixer
+    pavucontrol
     wl-clipboard # required by cliphist's service
   ];
 }
