@@ -196,20 +196,20 @@
 
            .modules-left,
            .modules-center {
-             background: radial-gradient(circle, rgba(180,9,9,1) 0%, rgba(19,25,32,1) 100%);
+             background: radial-gradient(circle, rgba(19,172,172,1) 0%, rgba(19,25,32,1) 100%);
              border-radius: 0.5rem;
              padding: 2px;
            }
 
            .modules-center {
-      color: white;
+            color: white;
            }
 
            .modules-right {
-             background: radial-gradient(circle, rgba(180,9,9,1) 0%, rgba(19,25,32,1) 90%);
+             background: radial-gradient(circle, rgba(19,172,172,1) 0%, rgba(19,25,32,1) 90%);
              border-radius: 0.5rem;
              padding: 2px 2px 2px 10px;
-      color: white;
+             color: white;
            }
 
            #pulseaudio {
@@ -233,7 +233,7 @@
             }
 
             #workspaces button.active {
-              color: #CA1A1A;
+              color: #13ACAC;
             }
 
             #workspaces button.urgent {
@@ -265,7 +265,7 @@
             }
 
             #temperature {
-              color: lightslategray;
+              color: lightgoldenrodyellow;
             }
     '';
   };
