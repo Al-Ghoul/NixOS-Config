@@ -8,6 +8,7 @@
     ./modules/home-manager/gtk.nix
     ./modules/home-manager/git.nix
     ./modules/home-manager/nixvim.nix
+    ./modules/home-manager/direnv.nix
   ];
 
   home.username = "abdo";
