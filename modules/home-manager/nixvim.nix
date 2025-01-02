@@ -344,9 +344,6 @@
               deadnix.enable = true;
               statix.enable = true;
             };
-            completion = {
-              luasnip.enable = true;
-            };
             formatting = {
               black.enable = true;
               alejandra.enable = true;
@@ -369,12 +366,11 @@
         cmp = {
           enable = true;
           settings = {
-            snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
             sources = [
-              {name = "luasnip";}
               {name = "nvim_lsp";}
-              {name = "path";}
               {name = "buffer";}
+              {name = "path";}
+              {name = "luasnip";}
             ];
             mapping = {
               "<C-Space>" = "cmp.mapping.complete()";
@@ -387,7 +383,6 @@
             };
           };
         };
-
         smart-splits = {
           enable = true;
           settings = {
