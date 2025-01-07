@@ -14,7 +14,6 @@
         modules-left = ["hyprland/workspaces"];
         "modules-right" = [
           "tray"
-          "idle_inhibitor"
 
           "network"
           "disk"
@@ -32,14 +31,6 @@
         tray = {
           icon-size = 16;
           spacing = 10;
-        };
-
-        "idle_inhibitor" = {
-          "format" = "{icon}";
-          "format-icons" = {
-            "activated" = "󰛊 ";
-            "deactivated" = "󰾫 ";
-          };
         };
 
         "hyprland/workspaces" = {
