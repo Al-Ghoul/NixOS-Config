@@ -319,8 +319,6 @@
               cmd = ["clangd" "--offset-encoding=utf-16"];
             };
             cmake.enable = true;
-            # prismals.enable = true;
-            # intelephense.enable = true;
             jsonls.enable = true;
             pyright.enable = true;
             ts_ls.enable = true;
