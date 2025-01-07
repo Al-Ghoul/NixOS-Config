@@ -3,9 +3,11 @@
     nixvim = {
       enable = true;
       performance = {
-        byteCompileLua.enable = true;
-        byteCompileLua.nvimRuntime = true;
-        byteCompileLua.plugins = true;
+        byteCompileLua = {
+          enable = true;
+          nvimRuntime = true;
+          plugins = true;
+        };
       };
       extraConfigLua = ''
         -- resizing splits
@@ -407,7 +409,7 @@
           });
         in {
           enable = true;
-          package = pkgs.vimPlugins.codeium-vim.overrideAttrs (finalAttr: p: {
+          package = pkgs.vimPlugins.codeium-vim.overrideAttrs (_: _: {
             version = "git";
             src = pkgs.fetchFromGitHub {
               owner = "Exafunction";
@@ -442,7 +444,7 @@
         wtf.enable = true;
         comment-box.enable = true;
       };
-      #
+
       extraPlugins = with pkgs.vimPlugins; [
         vim-highlightedyank
         vim-airline-themes
