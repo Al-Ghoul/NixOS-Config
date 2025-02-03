@@ -10,6 +10,15 @@
         };
       };
       extraConfigLua = ''
+        require('leetcode').setup({
+          lang = "javascript",
+          storage = {
+            home = vim.env.HOME .. "/repos/leetcode",
+            cache = vim.fn.stdpath("cache") .. "/leetcode",
+          },
+          -- image_support = true,
+        })
+
         -- resizing splits
          vim.keymap.set('n', '<A-h>', require('smart-splits').resize_left)
          vim.keymap.set('n', '<A-j>', require('smart-splits').resize_down)
@@ -446,6 +455,57 @@
       extraPlugins = with pkgs.vimPlugins; [
         vim-highlightedyank
         vim-airline-themes
+        (pkgs.vimUtils.buildVimPlugin {
+          pname = "leetcode.nvim";
+          version = "2024-10-28";
+          dependencies = [
+            nui-nvim
+            plenary-nvim
+            telescope-nvim
+          ];
+          doInstallCheck = true;
+          nvimSkipModule = [
+            # Requires setup call
+            "leetcode.api.auth"
+            "leetcode.api.headers"
+            "leetcode.api.interpreter"
+            "leetcode.api.problems"
+            "leetcode.api.question"
+            "leetcode.api.statistics"
+            "leetcode.api.utils"
+            "leetcode.cache.cookie"
+            "leetcode.cache.init"
+            "leetcode.cache.problemlist"
+            "leetcode.pickers.language"
+            "leetcode.pickers.question"
+            "leetcode.picker.language.fzf"
+            "leetcode.picker.question.fzf"
+            "leetcode.picker.question.init"
+            "leetcode.picker.question.telescope"
+            "leetcode.picker.tabs.fzf"
+            "leetcode.runner.init"
+            "leetcode-plugins.cn.api"
+            "leetcode-ui.group.page.stats"
+            "leetcode-ui.group.similar-questions"
+            "leetcode-ui.layout.console"
+            "leetcode-ui.lines.calendar"
+            "leetcode-ui.lines.solved"
+            "leetcode-ui.popup.console.result"
+            "leetcode-ui.popup.info"
+            "leetcode-ui.popup.languages"
+            "leetcode-ui.popup.skills"
+            "leetcode-ui.question"
+            "leetcode-ui.renderer.menu"
+            "leetcode-ui.renderer.result"
+          ];
+          src = pkgs.fetchFromGitHub {
+            owner = "kawre";
+            repo = "leetcode.nvim";
+            rev = "db7e1cd6b9191b34b4c1f2f96e4e3949cde9f951";
+            sha256 = "sha256-95rto8ccbULPWHU0+TBguGdjmMq/klPxb1isIsxZdLQ=";
+          };
+          meta.homepage = "https://github.com/kawre/leetcode.nvim/";
+        })
       ];
     };
 
