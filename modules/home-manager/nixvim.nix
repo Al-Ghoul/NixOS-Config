@@ -31,7 +31,6 @@
          vim.keymap.set('n', '<C-l>', require('smart-splits').move_cursor_right)
 
          vim.keymap.set("n", "<space>f", vim.lsp.buf.format, {})
-
       '';
       globals = {mapleader = ",";};
       keymaps = [
@@ -298,8 +297,8 @@
         fidget.enable = true;
         illuminate.enable = true;
         colorizer.enable = true;
+        csvview.enable = true;
         emmet.enable = true;
-        plantuml-syntax.enable = true;
         vim-surround.enable = true;
         todo-comments.enable = true;
         treesitter = {
