@@ -42,5 +42,14 @@
     wl-clipboard # required by cliphist's service
 
     hyprpicker
+
+    telegram-desktop
+    
+    gromit-mpx
+
+    # davinci-resolve-studio
+    kdenlive
+    
+    audacity
   ];
 }
