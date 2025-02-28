@@ -13,6 +13,10 @@
       url = "github:numtide/devshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -20,6 +24,7 @@
     home-manager,
     nixvim,
     devshell,
+    sops-nix,
     ...
   }: let
     system = "x86_64-linux";
@@ -34,6 +39,8 @@
       inherit system;
       modules = [
         ./configuration.nix
+        sops-nix.nixosModules.sops
+
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;

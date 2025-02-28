@@ -79,6 +79,23 @@
     (callPackage ./modules/nix-os/alghoul-sddm-theme.nix {})
   ];
 
+  sops = {
+    defaultSopsFile = ./secrets/secrets.yaml;
+    defaultSopsFormat = "yaml";
+    age = {
+      keyFile = "/home/abdo/.config/sops/age/keys.txt";
+      generateKey = true;
+    };
+    secrets.github-token = {};
+    templates = {
+      "nix-extra-config" = {
+        group = "users";
+        mode = "440";
+        content = "access-tokens = github.com=${config.sops.placeholder.github-token}";
+      };
+    };
+  };
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
