@@ -43,7 +43,7 @@
       "$mod, mouse:273, resizewindow"
     ];
     exec-once = [
-      "mpvpaper -o '--loop-file inf' '*' /mnt/HardDriveTwo/home/alghoul/Downloads/Wallpapers/Video/mylivewallpapers-com-Omen-4K.mp4"
+      "mpvpaper -o '--loop-file inf' '*' /mnt/HardDriveTwo/home/alghoul/Downloads/Wallpapers/Video/mylivewallpapers-com-Red-Tree-Samurai-4K.mp4"
       "waybar"
       "mako"
       "wl-paste --watch cliphist store"
@@ -57,7 +57,7 @@
       gaps_in = 5;
       gaps_out = 5;
       border_size = 2;
-      "col.active_border" = "rgba(B3FFFDee) rgba(000000ee) 90deg";
+      "col.active_border" = "rgba(cd0435ee) rgba(000000ee) 90deg";
       "col.inactive_border" = "rgba(595959aa)";
       layout = "dwindle";
     };
@@ -97,8 +97,11 @@
 
       "animation popin,class:^(kitty)$"
     ];
+    windowrule = [
+      "noblur,^(Gromit-mpx)$"
+    ];
     plugin = {
-      hyprtrails.color = "rgba(B3FFFDEE)";
+      hyprtrails.color = "rgba(cd0435EE)";
     };
   };
   wayland.windowManager.hyprland.plugins = [

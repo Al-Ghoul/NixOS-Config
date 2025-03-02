@@ -4,23 +4,23 @@
     enableFishIntegration = true;
     settings = {
       format = lib.concatStrings [
-        "[░▒▓](#27352d)"
-        "[ ❄️](bg:#638083 fg:#04494e)"
-        "[](bg:#638083 fg:#637e83)"
+        "[░▒▓](#35272a)"
+        "[ ❄️](bg:#836463 fg:#4e0404)"
+        "[](bg:#836463 fg:#836363)"
         "$directory"
-        "[](fg:#638083 bg:#374749)"
+        "[](fg:#836463 bg:#493837)"
         "$git_branch"
         "$git_status"
-        "[](fg:#374749 bg:#2c3a39)"
-        "[](fg:#2c3a39 bg:#21272c)"
-        "[ ](fg:#21272c)"
+        "[](fg:#493837 bg:#3a2c2c)"
+        "[](fg:#3a2c2c bg:#2c2121)"
+        "[ ](fg:#2c2121)"
         ''
 
           $character''
       ];
 
       directory = {
-        style = "fg:#e3e5e5 bg:#638083";
+        style = "fg:#e3e5e5 bg:#836463";
         format = lib.concatStrings ["[ $path ]" "($style)"];
         truncation_length = 3;
         truncation_symbol = "…/";
@@ -35,17 +35,17 @@
 
       git_branch = {
         symbol = "";
-        style = "bg:#394260";
+        style = "bg:#603939";
         format = lib.concatStrings [
-          "[[ $symbol $branch ](fg:#000000 bg:#374749)]"
+          "[[ $symbol $branch ](fg:#000000 bg:#493837)]"
           "($style)"
         ];
       };
 
       git_status = {
-        style = "bg:#394260";
+        style = "bg:#603939";
         format = lib.concatStrings [
-          "[[($all_status$ahead_behind )](fg:#FFFFFF bg:#374749)]"
+          "[[($all_status$ahead_behind )](fg:#FFFFFF bg:#493837)]"
           "($style)"
         ];
       };

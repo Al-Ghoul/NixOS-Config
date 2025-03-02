@@ -187,7 +187,7 @@
 
       .modules-left,
       .modules-center {
-        background: radial-gradient(circle, rgba(99,116,152,1) 0%, rgba(19,25,32,1) 100%);
+        background: radial-gradient(circle, rgba(205,4,53,1) 0%, rgba(19,25,32,1) 100%);
         border-radius: 0.5rem;
         padding: 2px;
       }
@@ -197,7 +197,7 @@
       }
 
       .modules-right {
-        background: radial-gradient(circle, rgba(99,116,152,1) 0%, rgba(19,25,32,1) 90%);
+        background: radial-gradient(circle, rgba(205,4,53,1) 0%, rgba(19,25,32,1) 90%);
         border-radius: 0.5rem;
         padding: 2px 2px 2px 10px;
         color: white;
@@ -224,7 +224,7 @@
        }
 
        #workspaces button.active {
-         color: #637498;
+         color: #FFF;
        }
 
        #workspaces button.urgent {

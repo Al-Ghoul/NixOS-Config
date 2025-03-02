@@ -222,7 +222,10 @@
         encoding = "UTF-8";
       };
 
-      colorschemes.oxocarbon.enable = true;
+      colorschemes.nightfox= {
+        enable = true;
+        flavor = "terafox";
+      };
 
       plugins = {
         startup = {
