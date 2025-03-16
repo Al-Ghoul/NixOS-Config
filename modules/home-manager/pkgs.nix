@@ -51,5 +51,6 @@
     kdenlive
     
     audacity
+    virt-manager
   ];
 }

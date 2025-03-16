@@ -24,7 +24,28 @@
     };
   };
 
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    docker.enable = true;
+    libvirtd = {
+      enable = true;
+      qemu = {
+        vhostUserPackages = [pkgs.virtiofsd];
+        package = pkgs.qemu_kvm;
+        runAsRoot = true;
+        swtpm.enable = true;
+        ovmf = {
+          enable = true;
+          packages = [
+            (pkgs.OVMF.override {
+              secureBoot = true;
+              tpmSupport = true;
+            })
+            .fd
+          ];
+        };
+      };
+    };
+  };
 
   hardware.graphics.enable = true;
   programs = {
@@ -64,7 +85,7 @@
 
   users.users.abdo = {
     isNormalUser = true;
-    extraGroups = ["wheel" "docker"];
+    extraGroups = ["wheel" "docker" "libvirtd"];
     shell = pkgs.fish;
   };
   nix.settings.experimental-features = ["nix-command" "flakes"];
