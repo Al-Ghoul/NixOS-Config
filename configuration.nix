@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -92,7 +96,13 @@
     extraGroups = ["wheel" "docker" "libvirtd"];
     shell = pkgs.fish;
   };
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  nix = {
+    settings.experimental-features = ["nix-command" "flakes"];
+    extraOptions = ''
+      !include ${config.sops.templates."nix-extra-config".path}
+    '';
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
