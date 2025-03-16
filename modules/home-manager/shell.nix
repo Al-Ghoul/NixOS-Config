@@ -70,7 +70,7 @@
         }
 
         {
-          plugin = mkTmuxPlugin rec {
+          plugin = mkTmuxPlugin {
             pluginName = "tmux-pomodoro-plus";
             version = "1.0.2";
             src = pkgs.fetchFromGitHub {
@@ -111,6 +111,7 @@
       ];
 
       extraConfig = ''
+        # Splitting
         bind | split-window -h -c "#{pane_current_path}"
         bind - split-window -v -c "#{pane_current_path}"
 
