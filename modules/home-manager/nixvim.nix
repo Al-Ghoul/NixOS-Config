@@ -2,6 +2,7 @@
   programs = {
     nixvim = {
       enable = true;
+      clipboard.providers.wl-copy.enable = true;
       performance = {
         byteCompileLua = {
           enable = true;
@@ -31,7 +32,7 @@
          vim.keymap.set('n', '<C-l>', require('smart-splits').move_cursor_right)
 
          vim.keymap.set("n", "<space>f", vim.lsp.buf.format, {})
-      '';
+       '';
       globals = {mapleader = ",";};
       keymaps = [
         {
@@ -222,7 +223,7 @@
         encoding = "UTF-8";
       };
 
-      colorschemes.nightfox= {
+      colorschemes.nightfox = {
         enable = true;
         flavor = "terafox";
       };
@@ -308,6 +309,7 @@
           enable = true;
           nixvimInjections = true;
           folding = true;
+          settings.highlight.enable = true;
         };
         rainbow-delimiters.enable = true;
         wilder = {
