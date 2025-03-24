@@ -173,21 +173,32 @@
     style = ''
       * {
         font-family: "JetBrainsMono Nerd Font";
+        border: none;
+        border-radius: 0;
+        min-height: 0;
+        margin-left: 4px;
+        margin-right: 4px; 
       }
 
       window#waybar {
-        background: rgba(0, 0, 0, 0);
-        font-size: 0.8rem;
-        border-radius: 0.5rem;
+        background-color: rgba(0,0,0,0.3);
+        color: #ffffff;
+        transition-property: background-color;
+        transition-duration: .5s;
+        border-radius: 10px;
       }
 
       tooltip {
-        font-size: 0.8rem;
+        background: #1e1e2e;
+        opacity: 0.6;
+        border-radius: 10px;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #11111b;
       }
 
       .modules-left,
       .modules-center {
-        background: radial-gradient(circle, rgba(205,4,53,1) 0%, rgba(19,25,32,1) 100%);
         border-radius: 0.5rem;
         padding: 2px;
       }
@@ -197,7 +208,6 @@
       }
 
       .modules-right {
-        background: radial-gradient(circle, rgba(205,4,53,1) 0%, rgba(19,25,32,1) 90%);
         border-radius: 0.5rem;
         padding: 2px 2px 2px 10px;
         color: white;
