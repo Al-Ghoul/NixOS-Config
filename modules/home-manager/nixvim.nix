@@ -456,7 +456,6 @@
         cloak.enable = true;
         yanky.enable = true;
         wtf.enable = true;
-        comment-box.enable = true;
       };
 
       extraPlugins = with pkgs.vimPlugins; [
