@@ -54,8 +54,8 @@
       kb_variant = ",qwerty";
     };
     general = {
-      gaps_in = 5;
-      gaps_out = 5;
+      gaps_in = 2;
+      gaps_out = 4;
       border_size = 2;
       "col.active_border" = "rgba(cd0435ee) rgba(000000ee) 90deg";
       "col.inactive_border" = "rgba(595959aa)";
@@ -96,6 +96,12 @@
       "animation popin,class:^(brave)$"
 
       "animation popin,class:^(kitty)$"
+      "tag +terminal, class:^(kitty|kitty-dropterm)$"
+
+      "opacity 0.8 0.7, tag:terminal*"
+
+      "float, class:^(mpv)$"
+      
     ];
     windowrule = [
       "noblur,^(Gromit-mpx)$"
