@@ -14,9 +14,11 @@
     ./modules/home-manager/wl-logout.nix
   ];
 
-  home.username = "abdo";
-  home.homeDirectory = "/home/abdo";
-  home.stateVersion = "23.11";
+  home = {
+    username = "abdo";
+    homeDirectory = "/home/abdo";
+    stateVersion = "23.11";
+  };
 
   home.pointerCursor = {
     gtk.enable = true;
