@@ -29,6 +29,9 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
+      packageOverrides = pkgs: {
+        vaapiIntel = pkgs.vaapiIntel.override {enableHybridCodec = true;};
+      };
     };
   };
 
@@ -56,7 +59,15 @@
     };
   };
 
-  hardware.graphics.enable = true;
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      libva
+      libva-utils
+      intel-media-driver
+      libvdpau-va-gl
+    ];
+  };
   programs = {
     hyprland.enable = true;
     thunar.enable = true;
@@ -90,6 +101,7 @@
       pulse.enable = true;
       wireplumber.enable = true;
     };
+    xserver.videoDrivers = ["amdgpu"];
   };
 
   users.users.abdo = {
