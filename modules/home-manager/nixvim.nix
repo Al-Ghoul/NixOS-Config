@@ -320,11 +320,11 @@
         lspsaga.enable = true;
         web-devicons.enable = true;
 
+        tailwind-tools.enable = true;
         lsp = {
           enable = true;
           servers = {
             nixd.enable = true;
-            tailwindcss.enable = true;
             clangd = {
               enable = true;
               cmd = ["clangd" "--offset-encoding=utf-16"];
@@ -341,6 +341,11 @@
             sqls.enable = true;
             zls.enable = true;
             svelte.enable = true;
+            protols.enable = true;
+            prismals = {
+              enable = true;
+              package = pkgs.nodePackages."@prisma/language-server";
+            };
           };
         };
         lint.enable = true;
