@@ -1,5 +1,0 @@
-[formatter.alejandra]
-command = "alejandra"
-excludes = []
-includes = ["*.nix"]
-options = []

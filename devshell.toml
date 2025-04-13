@@ -1,5 +1,0 @@
-[[commands]]
-package = "treefmt2"
-
-[[commands]]
-package = "alejandra"
