@@ -177,7 +177,7 @@
         border-radius: 0;
         min-height: 0;
         margin-left: 4px;
-        margin-right: 4px; 
+        margin-right: 4px;
       }
 
       window#waybar {
