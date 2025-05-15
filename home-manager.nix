@@ -12,6 +12,7 @@
     ./modules/home-manager/services.nix
     ./modules/home-manager/swaylock.nix
     ./modules/home-manager/wl-logout.nix
+    ./modules/home-manager/mpv.nix
   ];
 
   home = {
