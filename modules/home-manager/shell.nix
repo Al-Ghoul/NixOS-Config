@@ -10,7 +10,6 @@
         ld = "lazydocker";
       };
       plugins = [
-        # Enable a plugin (here grc for colorized command output) from nixpkgs
         {
           inherit (pkgs.fishPlugins.grc) src;
           name = "grc";
@@ -24,6 +23,7 @@
         package = pkgs.nerd-fonts.jetbrains-mono;
         name = "jetbrains mono nerd font";
       };
+      themeFile = "rose-pine";
       settings = {
         foreground = "#dddddd";
         background = "#000000";
@@ -36,32 +36,6 @@
         wheel_scroll_min_lines = 1;
         selection_foreground = "none";
         selection_background = "none";
-
-        active_tab_foreground = "#131114";
-        active_tab_background = "#F9E4DF";
-        inactive_tab_foreground = "#F9E4DF";
-        inactive_tab_background = "#131114";
-
-        active_border_color = "#F9E4DF";
-        inactive_border_color = "#131114";
-        bell_border_color = "#130A16";
-
-        color0 = "#3B393C";
-        color1 = "#5e2a24";
-        color2 = "#912121";
-        color3 = "#552C32";
-        color4 = "#7a3232";
-        color5 = "#9D4B6F";
-        color6 = "#B3857A";
-        color7 = "#EFD0C9";
-        color8 = "#A7918C";
-        color9 = "#553030";
-        color10 = "#963535";
-        color11 = "#723A43";
-        color12 = "#a34343";
-        color13 = "#D16494";
-        color14 = "#EFB1A3";
-        color15 = "#EFD0C9";
 
         enabled_layouts = "vertical,horizontal";
         bold_font = "auto";
