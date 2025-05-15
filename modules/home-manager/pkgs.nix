@@ -24,9 +24,6 @@
     # Social
     vesktop
 
-    # Audio/Video player
-    mpv
-
     # sends desktop notifications to a notification daemon
     libnotify
 
@@ -44,13 +41,15 @@
     hyprpicker
 
     telegram-desktop
-    
+
     gromit-mpx
 
     # davinci-resolve-studio
-    kdenlive
-    
+
     audacity
     virt-manager
+
+
+    gitflow
   ];
 }
