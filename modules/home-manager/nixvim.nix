@@ -6,8 +6,55 @@
       performance = {
         byteCompileLua = {
           enable = true;
+          configs = true;
+          initLua = true;
+          luaLib = true;
           nvimRuntime = true;
           plugins = true;
+        };
+      };
+      lsp = {
+        inlayHints.enable = true;
+        servers = {
+          nixd.enable = true;
+          clangd = {
+            enable = true;
+            settings = {
+              cmd = [
+                "clangd"
+                "--background-index"
+              ];
+              filetypes = [
+                "c"
+                "cpp"
+              ];
+              root_markers = [
+                "compile_commands.json"
+                "compile_flags.txt"
+              ];
+            };
+          };
+          cmake.enable = true;
+          jsonls.enable = true;
+          pyright.enable = true;
+          ts_ls.enable = true;
+          astro.enable = true;
+          html.enable = true;
+          cssls.enable = true;
+          marksman.enable = true;
+          nginx_language_server.enable = true;
+          sqls.enable = true;
+          zls.enable = true;
+          svelte.enable = true;
+          protols.enable = true;
+          prismals = {
+            enable = true;
+            # package = pkgs.nodePackages."@prisma/language-server";
+          };
+          tailwindcss.enable = true;
+          postgres_lsp.enable = true;
+          eslint.enable = true;
+          gopls.enable = true;
         };
       };
       extraConfigLua = ''
@@ -31,8 +78,16 @@
          vim.keymap.set('n', '<C-k>', require('smart-splits').move_cursor_up)
          vim.keymap.set('n', '<C-l>', require('smart-splits').move_cursor_right)
 
+         local harpoon = require("harpoon")
+         harpoon:setup()
+
+         vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+         vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+         vim.keymap.set("n", "<leader>pp", function() harpoon:list():prev() end)
+         vim.keymap.set("n", "<leader>nn", function() harpoon:list():next() end)
+
          vim.keymap.set("n", "<space>f", vim.lsp.buf.format, {})
-       '';
+      '';
       globals = {mapleader = ",";};
       keymaps = [
         {
@@ -226,6 +281,7 @@
       colorschemes.nightfox = {
         enable = true;
         flavor = "terafox";
+        settings.options.transparent = true;
       };
 
       plugins = {
@@ -253,7 +309,7 @@
             header = {
               align = "center";
               content = {__raw = "require('startup.headers').hydra_header";};
-              defaultColor = "#741616";
+              defaultColor = "#8BAFE0";
               foldSection = false;
               highlight = "Statement";
               margin = 5;
@@ -274,19 +330,6 @@
             "<leader>fb" = "buffers";
           };
         };
-        harpoon = {
-          enable = true;
-          keymaps = {
-            addFile = "<leader>a";
-            toggleQuickMenu = "<leader>e";
-            navNext = "<leader>pp";
-            navPrev = "<leader>nn";
-          };
-        };
-        airline = {
-          enable = true;
-          settings.theme = "transparent";
-        };
         which-key.enable = true;
         better-escape.enable = true;
         comment.enable = true;
@@ -300,7 +343,13 @@
         noice.enable = true;
         fidget.enable = true;
         illuminate.enable = true;
-        colorizer.enable = true;
+        ccc = {
+          enable = true;
+          settings = {
+            highlighter.auto_enable = true;
+          };
+        };
+
         csvview.enable = true;
         emmet.enable = true;
         vim-surround.enable = true;
@@ -308,8 +357,10 @@
         treesitter = {
           enable = true;
           nixvimInjections = true;
-          folding = true;
-          settings.highlight.enable = true;
+          settings = {
+            highlight.enable = true;
+            indent.enable = true;
+          };
         };
         rainbow-delimiters.enable = true;
         wilder = {
@@ -322,34 +373,6 @@
         lspsaga.enable = true;
         web-devicons.enable = true;
 
-        tailwind-tools.enable = true;
-        lsp = {
-          enable = true;
-          servers = {
-            nixd.enable = true;
-            clangd = {
-              enable = true;
-              cmd = ["clangd" "--offset-encoding=utf-16"];
-            };
-            cmake.enable = true;
-            jsonls.enable = true;
-            pyright.enable = true;
-            ts_ls.enable = true;
-            astro.enable = true;
-            html.enable = true;
-            cssls.enable = true;
-            marksman.enable = true;
-            nginx_language_server.enable = true;
-            sqls.enable = true;
-            zls.enable = true;
-            svelte.enable = true;
-            protols.enable = true;
-            prismals = {
-              enable = true;
-              package = pkgs.nodePackages."@prisma/language-server";
-            };
-          };
-        };
         lint.enable = true;
 
         none-ls = {
@@ -361,14 +384,11 @@
             diagnostics = {
               deadnix.enable = true;
               statix.enable = true;
+              actionlint.enable = true;
+              golangci_lint.enable = true;
             };
             formatting = {
-              black.enable = true;
-              alejandra.enable = true;
-              prettier = {
-                enable = true;
-                disableTsServerFormatter = true;
-              };
+              treefmt.enable = true;
             };
           };
         };
@@ -413,25 +433,25 @@
           };
         };
 
-        codeium-vim = let
+        windsurf-vim = let
           codeiumPkg = pkgs.codeium.overrideAttrs (prevAttrs: rec {
-            version = "1.8.59";
+            version = "1.46.0";
             plat = "linux_x64";
             src = pkgs.fetchurl {
               name = "${prevAttrs.pname}-${version}.gz";
               url = "https://github.com/Exafunction/codeium/releases/download/language-server-v${version}/language_server_${plat}.gz";
-              hash = "sha256-j+5ckDfn87vvaGk+c+yHfF/F5KLLOLirPaR582kUD5U=";
+              hash = "sha256-wZl6wlR+K53rGeQ75ZVzmzKpiBnp6/UCTNx/iOHscug=";
             };
           });
         in {
           enable = true;
-          package = pkgs.vimPlugins.codeium-vim.overrideAttrs (_: _: {
+          package = pkgs.vimPlugins.windsurf-vim.overrideAttrs (_: _: {
             version = "git";
             src = pkgs.fetchFromGitHub {
               owner = "Exafunction";
               repo = "codeium.vim";
-              rev = "5644ac5a0e098ca0cf5deed1c909c3fa5e9901f3";
-              sha256 = "sha256-7XElW/54T6VlUJwvXFr4PumrX96jyzZi5XqA9n7hLJA=";
+              rev = "272c6e2755e8faa90e26bcdcd9fde6b9e61751ea";
+              sha256 = "sha256-V3ePeEysQFvYO7cVlNsbs5WURo15kJrxWIvx5KkGXTQ=";
             };
           });
           settings = {bin = "${codeiumPkg}/bin/codeium_language_server";};
@@ -452,12 +472,11 @@
         };
 
         flash.enable = true;
-        guess-indent.enable = true;
         hop.enable = true;
-        kulala.enable = true;
         cloak.enable = true;
-        yanky.enable = true;
-        wtf.enable = true;
+        harpoon.enable = true;
+        hardtime.enable = true;
+        precognition.enable = true;
       };
 
       extraPlugins = with pkgs.vimPlugins; [
@@ -515,6 +534,12 @@
           meta.homepage = "https://github.com/kawre/leetcode.nvim/";
         })
       ];
+
+      nixpkgs = {
+        config = {
+          allowUnfree = true;
+        };
+      };
     };
 
     ripgrep.enable = true;
