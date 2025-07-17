@@ -1,5 +1,44 @@
 {pkgs, ...}: {
   programs = {
+    ghostty = {
+      enable = true;
+      enableFishIntegration = true;
+      themes = {
+        AGs_theme = {
+          foreground = "d0d0d0";
+          cursor-color = "eeeeee";
+          selection-background = "005f5f";
+          selection-foreground = "eeeeee";
+          palette = [
+            "0=#3B393C"
+            "1=#5e2a24"
+            "2=#912121"
+            "3=#552C32"
+            "4=#7a3232"
+            "5=#9D4B6F"
+            "6=#B3857A"
+            "7=#EFD0C9"
+            "8=#A7918C"
+            "9=#553030"
+            "10=#963535"
+            "11=#723A43"
+            "12=#a34343"
+            "13=#D16494"
+            "14=#EFB1A3"
+            "15=#EFD0C9"
+          ];
+          background = "000000";
+        };
+      };
+      settings = {
+        macos-icon = "paper";
+        theme = "AGs_theme";
+        background-opacity = 0.9;
+        font-size = 10;
+        font-family = "JetBrains Mono Nerd Font";
+      };
+    };
+
     fish = {
       enable = true;
       interactiveShellInit = ''
@@ -17,45 +56,7 @@
       ];
     };
 
-    kitty = {
-      enable = true;
-      font = {
-        package = pkgs.nerd-fonts.jetbrains-mono;
-        name = "jetbrains mono nerd font";
-      };
-      themeFile = "rose-pine";
-      settings = {
-        foreground = "#dddddd";
-        background = "#000000";
-        cursor = "#dddddd";
-        background_opacity = "0.9";
-        dynamic_background_opacity = "1";
-        cursor_trail = "1";
-        linux_display_server = "auto";
-        scrollback_lines = 2000;
-        wheel_scroll_min_lines = 1;
-        selection_foreground = "none";
-        selection_background = "none";
-
-        enabled_layouts = "vertical,horizontal";
-        bold_font = "auto";
-        italic_font = "auto";
-        bold_italic_font = "auto";
-      };
-      keybindings = {
-        "ctrl+right" = "resize_window narrower";
-        "ctrl+left" = "resize_window wider";
-        "ctrl+up" = "resize_window taller";
-        "ctrl+down" = "resize_window shorter";
-        "ctrl+home" = "resize_window reset";
-        "ctrl+shift+t" = "new_tab_with_cwd";
-        "ctrl+shift+n" = "no_op";
-      };
-      shellIntegration = {enableFishIntegration = true;};
-    };
-
     fzf = {enable = true;};
-
     zoxide = {enable = true;};
 
     tmux = {

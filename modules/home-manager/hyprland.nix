@@ -1,10 +1,19 @@
 {pkgs, ...}: {
+  wayland.windowManager.hyprland.package = pkgs.hyprland.overrideAttrs (_oldAttrs: {
+    src = pkgs.fetchFromGitHub {
+      owner = "Al-Ghoul";
+      repo = "hyprland";
+      fetchSubmodules = true;
+      hash = "sha256-nUVwD+trJj7n2+QNZaMsj9ZAg1dfD8L2+J9IF0D4xh0=";
+      rev = "9af01aa238ef6a2b8dcbdefc82495c8330bfaa18";
+    };
+  });
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     bind =
       [
-        "$mod, Q, exec, kitty"
+        "$mod, Q, exec, ghostty"
         "$mod, B, exec, brave"
         "$mod, S, togglespecialworkspace, magic"
         "$mod SHIFT, S, movetoworkspace, special:magic"
@@ -43,21 +52,20 @@
       "$mod, mouse:273, resizewindow"
     ];
     exec-once = [
-      "mpvpaper -o '--loop-file inf' '*' /mnt/HardDriveTwo/home/alghoul/Downloads/Wallpapers/Video/mylivewallpapers-com-Red-Tree-Samurai-4K.mp4"
+      "mpvpaper --auto-stop --mpv-options 'loop-file=inf no-config hwdec=auto' '*' '/mnt/HardDriveTwo/home/alghoul/Downloads/Wallpapers/Video/mylivewallpapers-com-Ichigo-Hollowification-4K.mp4'"
       "waybar"
       "mako"
       "wl-paste --watch cliphist store"
     ];
     input = {
       kb_layout = "us,ara";
-      kb_options = "grp:alt_shift_toggle";
-      kb_variant = ",qwerty";
+      kb_options = "grp:alt_shift_toggle, compose:ralt";
     };
     general = {
       gaps_in = 2;
       gaps_out = 4;
       border_size = 2;
-      "col.active_border" = "rgba(cd0435ee) rgba(000000ee) 90deg";
+      "col.active_border" = "rgba(A03D2Cee) rgba(000000ee) 90deg";
       "col.inactive_border" = "rgba(595959aa)";
       layout = "dwindle";
     };
@@ -95,19 +103,16 @@
 
       "animation popin,class:^(brave)$"
 
-      "animation popin,class:^(kitty)$"
-      "tag +terminal, class:^(kitty|kitty-dropterm)$"
+      "tag +terminal, class:^(kitty|kitty-dropterm|com.mitchellh.ghostty)$"
 
       "opacity 0.8 0.7, tag:terminal*"
 
       "float, class:^(mpv)$"
-      
-    ];
-    windowrule = [
-      "noblur,^(Gromit-mpx)$"
+
+      "noblur, class:^(Gromit-mpx)$"
     ];
     plugin = {
-      hyprtrails.color = "rgba(cd0435EE)";
+      hyprtrails.color = "rgba(A03D2CEE)";
     };
   };
   wayland.windowManager.hyprland.plugins = [
