@@ -31,11 +31,6 @@
     options = ["rw" "uid=1000"];
   };
 
-  fileSystems."/mnt/HardDriveTwo" = {
-    device = "/dev/disk/by-uuid/5c7ff1cc-7911-465f-8662-53e3ec23c0f0";
-    fsType = "ext4";
-  };
-
   swapDevices = [];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
