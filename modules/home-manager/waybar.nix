@@ -172,7 +172,7 @@
     };
     style = ''
       * {
-        font-family: "JetBrainsMono Nerd Font";
+        font-family: "JetBrains Mono Nerd Font";
         border: none;
         border-radius: 0;
         min-height: 0;

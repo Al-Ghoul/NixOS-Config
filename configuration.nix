@@ -35,6 +35,19 @@
     };
   };
 
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      nerd-fonts.jetbrains-mono
+    ];
+
+    fontconfig = {
+      defaultFonts = {
+        monospace = ["JetBrains Mono Nerd Font"];
+      };
+    };
+  };
+
   virtualisation = {
     docker.enable = true;
     waydroid.enable = true;
