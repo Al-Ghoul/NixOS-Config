@@ -1,8 +1,5 @@
-{pkgs, ...}: {
+_: {
   programs.mpv = {
     enable = true;
-    scripts = [
-      pkgs.mpvScripts.mpv-discord
-    ];
   };
 }
