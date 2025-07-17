@@ -4,7 +4,6 @@
     brave
     firefox-devedition
 
-    # Text colorizes for fish
     grc
 
     mpvpaper
@@ -49,7 +48,12 @@
     audacity
     virt-manager
 
-
     gitflow
+
+    spotify
+    whatsapp-for-linux
+    inkscape # SVG editor
+
+    scrcpy # Android screen mirroring
   ];
 }
