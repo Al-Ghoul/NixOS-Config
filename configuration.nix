@@ -31,6 +31,14 @@
       allowUnfree = true;
       packageOverrides = pkgs: {
         vaapiIntel = pkgs.vaapiIntel.override {enableHybridCodec = true;};
+        nur =
+          import (builtins.fetchGit {
+            url = "https://github.com/NL-TCH/nur-packages.git";
+            ref = "master";
+            rev = "9762f014bf6f6115da22547eba3698a95be3ab01";
+          }) {
+            inherit pkgs;
+          };
       };
     };
   };

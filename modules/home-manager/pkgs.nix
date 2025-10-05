@@ -50,10 +50,10 @@
 
     gitflow
 
-    spotify
     whatsapp-for-linux
     inkscape # SVG editor
 
     scrcpy # Android screen mirroring
+    nur.spotify-adblock
   ];
 }
