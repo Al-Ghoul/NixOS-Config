@@ -55,6 +55,8 @@
           postgres_lsp.enable = true;
           eslint.enable = true;
           gopls.enable = true;
+          dockerls.enable = true;
+          docker_compose_language_service.enable = true;
         };
       };
       extraConfigLua = ''
