@@ -13,7 +13,7 @@
     "$mod" = "SUPER";
     bind =
       [
-        "$mod, Q, exec, ghostty"
+        "$mod, Q, exec, kitty"
         "$mod, B, exec, brave"
         "$mod, S, togglespecialworkspace, magic"
         "$mod SHIFT, S, movetoworkspace, special:magic"
