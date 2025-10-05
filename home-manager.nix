@@ -13,6 +13,7 @@
     ./modules/home-manager/swaylock.nix
     ./modules/home-manager/wl-logout.nix
     ./modules/home-manager/mpv.nix
+    ./modules/home-manager/obs-studio.nix
   ];
 
   home = {

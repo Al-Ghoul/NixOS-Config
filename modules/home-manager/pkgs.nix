@@ -17,8 +17,6 @@
     pomodoro-gtk
     obsidian
 
-    # Media recording
-    obs-studio
 
     # Social
     vesktop
