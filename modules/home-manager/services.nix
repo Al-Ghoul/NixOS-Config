@@ -4,19 +4,20 @@ _: {
 
     mako = {
       enable = true;
-      font = "Fantasque Sans Mono 14";
-      anchor = "top-right";
-      defaultTimeout = 5000;
-      sort = "-time";
-
-      backgroundColor = "#1e1e2e";
-      borderColor = "#313244";
-      progressColor = "over #89b4fa";
-      textColor = "#d9e0ee";
-      padding = "15";
-      borderSize = 2;
-      borderRadius = 10;
-      maxIconSize = 48;
+      settings = {
+        font = "Fantasque Sans Mono 14";
+        anchor = "top-right";
+        default-timeout = 5000;
+        sort = "-time";
+        background-color = "#1e1e2e";
+        border-color = "#313244";
+        progress-color = "over #89b4fa";
+        text-color = "#d9e0ee";
+        padding = "15";
+        border-size = 2;
+        border-radius = 10;
+        max-icon-size = 48;
+      };
 
       extraConfig = ''
         max-history=100

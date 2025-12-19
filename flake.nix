@@ -52,7 +52,7 @@
             users.abdo = {
               imports = [
                 ./home-manager.nix
-                nixvim.homeManagerModules.nixvim
+                nixvim.homeModules.nixvim
               ];
             };
           };
