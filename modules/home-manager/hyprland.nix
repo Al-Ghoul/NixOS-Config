@@ -52,7 +52,7 @@
       "$mod, mouse:273, resizewindow"
     ];
     exec-once = [
-      "mpvpaper --auto-stop --mpv-options 'loop-file=inf no-config hwdec=auto' '*' '/mnt/HardDriveOne/Wallpapers/Video/mylivewallpapers-com-Omen-4K.mp4'"
+      "mpvpaper --auto-stop --mpv-options 'loop-file=inf no-config hwdec=auto' '*' '/mnt/HardDriveOne/Wallpapers/Video/mylivewallpapers-com-Ichigo-Hollowification-4K.mp4'"
       "waybar"
       "mako"
       "wl-paste --watch cliphist store"
