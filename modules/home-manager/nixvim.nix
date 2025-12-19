@@ -333,7 +333,6 @@
           };
         };
         which-key.enable = true;
-        better-escape.enable = true;
         comment.enable = true;
         lastplace.enable = true;
         markdown-preview.enable = true;
