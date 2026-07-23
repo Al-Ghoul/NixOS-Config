@@ -27,12 +27,14 @@
               filetypes = [
                 "c"
                 "cpp"
+                "cxx"
               ];
               root_markers = [
                 "compile_commands.json"
                 "compile_flags.txt"
               ];
             };
+            package = null;
           };
           cmake.enable = true;
           jsonls.enable = true;
@@ -57,6 +59,8 @@
           gopls.enable = true;
           dockerls.enable = true;
           docker_compose_language_service.enable = true;
+          jdtls.enable = true;
+          glsl_analyzer.enable = true;
         };
       };
       extraConfigLua = ''
@@ -70,25 +74,39 @@
         })
 
         -- resizing splits
-         vim.keymap.set('n', '<A-h>', require('smart-splits').resize_left)
-         vim.keymap.set('n', '<A-j>', require('smart-splits').resize_down)
-         vim.keymap.set('n', '<A-k>', require('smart-splits').resize_up)
-         vim.keymap.set('n', '<A-l>', require('smart-splits').resize_right)
-         -- moving between splits
-         vim.keymap.set('n', '<C-h>', require('smart-splits').move_cursor_left)
-         vim.keymap.set('n', '<C-j>', require('smart-splits').move_cursor_down)
-         vim.keymap.set('n', '<C-k>', require('smart-splits').move_cursor_up)
-         vim.keymap.set('n', '<C-l>', require('smart-splits').move_cursor_right)
+        vim.keymap.set('n', '<A-h>', require('smart-splits').resize_left)
+        vim.keymap.set('n', '<A-j>', require('smart-splits').resize_down)
+        vim.keymap.set('n', '<A-k>', require('smart-splits').resize_up)
+        vim.keymap.set('n', '<A-l>', require('smart-splits').resize_right)
+        -- moving between splits
+        vim.keymap.set('n', '<C-h>', require('smart-splits').move_cursor_left)
+        vim.keymap.set('n', '<C-j>', require('smart-splits').move_cursor_down)
+        vim.keymap.set('n', '<C-k>', require('smart-splits').move_cursor_up)
+        vim.keymap.set('n', '<C-l>', require('smart-splits').move_cursor_right)
 
-         local harpoon = require("harpoon")
-         harpoon:setup()
+        local harpoon = require("harpoon")
+        harpoon:setup()
 
-         vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
-         vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-         vim.keymap.set("n", "<leader>pp", function() harpoon:list():prev() end)
-         vim.keymap.set("n", "<leader>nn", function() harpoon:list():next() end)
+        vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+        vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+        vim.keymap.set("n", "<leader>pp", function() harpoon:list():prev() end)
+        vim.keymap.set("n", "<leader>nn", function() harpoon:list():next() end)
 
-         vim.keymap.set("n", "<space>f", vim.lsp.buf.format, {})
+        vim.keymap.set("n", "<space>f", vim.lsp.buf.format, {})
+
+        -- fixes glsl_analyzer\'s filetype detection (filetypes attr doesn\'t seem to work for some reason)
+        vim.filetype.add({
+          extension = {
+            ["vert"] = "glsl",
+            ["tesc"] = "glsl",
+            ["tese"] = "glsl",
+            ["frag"] = "glsl",
+            ["geom"] = "glsl",
+            ["comp"] = "glsl",
+            ["vs"] = "glsl",
+            ["fs"] = "glsl",
+          },
+        })
       '';
       globals = {mapleader = ",";};
       keymaps = [
@@ -436,29 +454,7 @@
           };
         };
 
-        windsurf-vim = let
-          codeiumPkg = pkgs.codeium.overrideAttrs (prevAttrs: rec {
-            version = "1.46.0";
-            plat = "linux_x64";
-            src = pkgs.fetchurl {
-              name = "${prevAttrs.pname}-${version}.gz";
-              url = "https://github.com/Exafunction/codeium/releases/download/language-server-v${version}/language_server_${plat}.gz";
-              hash = "sha256-wZl6wlR+K53rGeQ75ZVzmzKpiBnp6/UCTNx/iOHscug=";
-            };
-          });
-        in {
-          enable = true;
-          package = pkgs.vimPlugins.windsurf-vim.overrideAttrs (_: _: {
-            version = "git";
-            src = pkgs.fetchFromGitHub {
-              owner = "Exafunction";
-              repo = "codeium.vim";
-              rev = "272c6e2755e8faa90e26bcdcd9fde6b9e61751ea";
-              sha256 = "sha256-V3ePeEysQFvYO7cVlNsbs5WURo15kJrxWIvx5KkGXTQ=";
-            };
-          });
-          settings = {bin = "${codeiumPkg}/bin/codeium_language_server";};
-        };
+        copilot-vim.enable = true;
 
         undotree.enable = true;
         transparent = {
@@ -480,6 +476,8 @@
         harpoon.enable = true;
         hardtime.enable = true;
         precognition.enable = true;
+
+        jdtls.enable = true;
       };
 
       extraPlugins = with pkgs.vimPlugins; [
@@ -543,6 +541,7 @@
           allowUnfree = true;
         };
       };
+      dependencies.go.enable = true;
     };
 
     ripgrep.enable = true;
