@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./modules/home-manager/hyprland.nix
+    ./modules/home-manager/xdg-portal.nix
     ./modules/home-manager/waybar.nix
     ./modules/home-manager/wofi.nix
     ./modules/home-manager/pkgs.nix
