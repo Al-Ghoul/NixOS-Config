@@ -17,9 +17,9 @@
     pomodoro-gtk
     obsidian
 
-
     # Social
     vesktop
+    discord
 
     # sends desktop notifications to a notification daemon
     libnotify
@@ -48,10 +48,19 @@
 
     gitflow
 
-    whatsapp-for-linux
+    wasistlos
     inkscape # SVG editor
 
     scrcpy # Android screen mirroring
+
+    blender
+
+    remmina
+    teamviewer
+
     nur.spotify-adblock
+
+    clinfo # now this is actually runnable
+    opencl-headers
   ];
 }

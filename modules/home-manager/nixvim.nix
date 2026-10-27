@@ -60,6 +60,7 @@
           dockerls.enable = true;
           docker_compose_language_service.enable = true;
           jdtls.enable = true;
+          kotlin_language_server.enable = true;
           glsl_analyzer.enable = true;
         };
       };

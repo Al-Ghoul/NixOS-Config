@@ -30,7 +30,6 @@
     config = {
       allowUnfree = true;
       packageOverrides = pkgs: {
-        vaapiIntel = pkgs.vaapiIntel.override {enableHybridCodec = true;};
         nur =
           import (builtins.fetchGit {
             url = "https://github.com/NL-TCH/nur-packages.git";
@@ -66,35 +65,28 @@
         package = pkgs.qemu_kvm;
         runAsRoot = true;
         swtpm.enable = true;
-        ovmf = {
-          enable = true;
-          packages = [
-            (pkgs.OVMF.override {
-              secureBoot = true;
-              tpmSupport = true;
-            })
-            .fd
-          ];
-        };
       };
     };
   };
 
   hardware.graphics = {
     enable = true;
-    extraPackages = with pkgs; [
-      libva
-      libva-utils
-      intel-media-driver
-      libvdpau-va-gl
-    ];
+    enable32Bit = true;
   };
+
   programs = {
     hyprland.enable = true;
     thunar.enable = true;
     fish.enable = true;
+    wireshark = {
+      enable = true;
+      dumpcap.enable = true;
+      package = pkgs.wireshark;
+    };
   };
+
   services = {
+    udisks2.enable = true;
     displayManager = {
       sddm = {
         enable = true;
@@ -122,6 +114,7 @@
       pulse.enable = true;
       wireplumber.enable = true;
     };
+    teamviewer.enable = true;
   };
 
   users.users.abdo = {
@@ -172,6 +165,9 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+  networking.hosts = {
+    "127.0.0.1" = ["commerce-mongo-db-node1" "commerce-mongo-db-node2" "commerce-mongo-db-node3"];
+  };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
